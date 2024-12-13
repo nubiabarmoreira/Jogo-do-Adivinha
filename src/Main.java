@@ -4,37 +4,31 @@ public class Main {
     public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int numeroMinimo = 0;
+        int pontuacaoTotal = 0;
 
-        Random geradorNumerosAleatorios = new Random((10 - numeroMinimo) +1);
+        Random geradorNumerosAleatorios = new Random();
+        int numeroSorteado = geradorNumerosAleatorios.nextInt(11);
 
-       /* List numbersList = new ArrayList() ;
-
-        for (int i = 1 ; i >= 0 && i <= 10 ; i++){
-            numbersList.add (new int [i]);
-        }
-
-        Collections.shuffle (numbersList) ;*/
+        System.out.println("****************************************");
+        System.out.println("**** Bem-vindo ao Jogo do Adivinha! ****");
+        System.out.println("****************************************");
+        System.out.println(" ");
 
         System.out.print("Escreva aqui o seu número palpite: ");
         int numeroPalpite = input.nextInt();
-        int numeroSorteado = geradorNumerosAleatorios.nextInt(5);
-
         System.out.println("Número sorteado pelo sistema: " + numeroSorteado);
-        System.out.println("Número palpite do usuário: " + numeroPalpite);
+        System.out.println(" ");
 
+        if (numeroPalpite == numeroSorteado){
+            pontuacaoTotal = pontuacaoTotal + 10;
+            System.out.println("Parabéns! Você acertou o número e ganhou 10 pontos!");
+        } else if (numeroPalpite == (numeroSorteado + 1) || numeroPalpite == (numeroSorteado - 1)) {
+            pontuacaoTotal = pontuacaoTotal + 5;
+            System.out.println("Quase lá! Você ficou a 1 de distância do número sorteado e ganhou 5 pontos!");
+        } else {
+            System.out.println("Seu palpite está errado, por isso não ganhou pontos.");
+        }
 
-        System.out.println();
-
+        System.out.println("Sua pontuação é de " + pontuacaoTotal + " pontos.");
     }
-
 }
-
-
-
-
-
-
-
-// suffle() = mistura os elementos
-// A sequencia aleatória é o processo implementado comumente em API de apoio em linguagens de programação e em Java é representado pela classe java.util.Random . Esta classe é o que se chama um Gerador de Números Aleatórios mas ele é de fato um gerador de sequências aleatórias.
