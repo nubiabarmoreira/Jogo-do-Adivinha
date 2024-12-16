@@ -2,7 +2,7 @@
 
 ## Índice
 1. [Descrição](#descrição)
-2. [Explicação](#Explicação do funcionamento do código) 
+2. [Explicação](#explicação-do-funcionamento-do-código) 
 3. [Execução](#execucao)
 4. [GitFlow](#gitflow)
 5. [Commits](#commits)
