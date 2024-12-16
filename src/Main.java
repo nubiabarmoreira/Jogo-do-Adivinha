@@ -1,5 +1,4 @@
 import java.util.*;
-import static jdk.internal.org.jline.utils.Colors.s;
 
 public class Main {
     public static void main (String[] args) {
@@ -9,17 +8,19 @@ public class Main {
         System.out.println("**** Bem-vindo ao Jogo do Adivinha! ****");
         System.out.println("****************************************");
         System.out.println(" ");
-        System.out.println("Informe o número de partidas que deseja jogar nessa rodada: ");
-        int vezesPartida = input.nextInt();
-        int rodada = 1;
 
+        System.out.print("Informe o número de partidas que deseja jogar nessa rodada: ");
+        int vezesPartida = input.nextInt();
         System.out.println(" ");
-        System.out.println("**** Vamos começar a rodada nª " + rodada + "****");
+
+        int rodada = 1;
+        System.out.println("**** Vamos começar a rodada nª " + rodada + " ****");
 
         int pontuacaoTotal = 0;
-        int pontos = 0;
 
         for (int i = vezesPartida; i > 0 ; i--) {
+
+            int pontos = 0;
 
             Random geradorNumerosAleatorios = new Random();
             int numeroSorteado = geradorNumerosAleatorios.nextInt(11);
@@ -28,7 +29,6 @@ public class Main {
             System.out.print("Escreva aqui o seu número palpite: ");
             int numeroPalpite = input.nextInt();
             System.out.println("Número sorteado pelo sistema: " + numeroSorteado);
-            System.out.println(" ");
 
             if (numeroPalpite == numeroSorteado){
                 pontos = 10;
@@ -39,10 +39,16 @@ public class Main {
             } else {
                 System.out.println("Seu palpite está errado, por isso não ganhou pontos.");
             }
+
+            pontuacaoTotal = pontuacaoTotal + pontos;
         }
 
-        pontuacaoTotal = pontuacaoTotal + pontos;
         System.out.println(" ");
         System.out.println("**** Sua pontuação na rodada nª " + rodada + " é de " + pontuacaoTotal + " pontos. ****");
+
+       /* if (i == 0) {
+
+        }*/
+
     }
 }
