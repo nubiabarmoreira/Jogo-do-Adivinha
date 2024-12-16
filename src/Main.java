@@ -45,10 +45,5 @@ public class Main {
 
         System.out.println(" ");
         System.out.println("**** Sua pontuação na rodada nª " + rodada + " é de " + pontuacaoTotal + " pontos. ****");
-
-       /* if (i == 0) {
-
-        }*/
-
     }
 }
