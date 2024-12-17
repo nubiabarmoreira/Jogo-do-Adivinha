@@ -15,6 +15,7 @@
 
 ## Explicação do funcionamento do código
 
+- Foi implementado de acordo com o paradigma procedural.
 - O programa foi escrito para o que o usuário jogue quantas partidas quiser dentro de uma única rodada, passando essa informação ao sistema; somente após isso que a rodada se dá início. 
 - O usuário insere seu palpite, o sistema exibe o número sorteado por ele e começa a comparação entre os dois números: 
   - caso os números sejam iguais, o usuário ganha 10 pontos;  
@@ -26,8 +27,9 @@
 > IMPORTANTE:
 > 
 > Os próximos passos de implementação de código são:
-> 1. O programa perguntar ao usuário se ele deseja encerrar a rodada ou jogar uma próxima (entrega média);
-> 2. Oferecer níveis de dificuldade para a escolha do usuário (entrega máxima).
+> 1. Refatorar o código de acordo com o paradigma procedural.
+> 2. O programa perguntar ao usuário se ele deseja encerrar a rodada ou jogar uma próxima (entrega média);
+> 3. Oferecer níveis de dificuldade para a escolha do usuário (entrega máxima).
 
 
 ## Execução
