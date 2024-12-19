@@ -3,19 +3,42 @@ import java.util.*;
 public class Main {
     public static void main (String[] args) {
         Scanner input = new Scanner(System.in);
+        int rodada = 1;
 
+        exibeBoasVindas();
+
+        while (true){
+            System.out.println("***** Vamos começar a rodada nª " + rodada + " *****");
+            int vezesPartida = obterNumeroPartidas(input);
+
+            int pontuacaoTotal = jogarPartidas(vezesPartida, input);
+            System.out.println("Sua pontuação na rodada nª " + rodada + " é de " + pontuacaoTotal + " pontos.");
+
+            System.out.println("Você deseja jogar outra rodada? 0/1");
+            int continuar = input.nextInt();
+            if (continuar == 0){
+                break;
+            } else{
+                rodada++;
+            }
+        }
+    }
+
+    public static void exibeBoasVindas () {
         System.out.println("****************************************");
         System.out.println("**** Bem-vindo ao Jogo do Adivinha! ****");
         System.out.println("****************************************");
         System.out.println(" ");
+    }
 
+    public static int obterNumeroPartidas(Scanner input) {
         System.out.print("Informe o número de partidas que deseja jogar nessa rodada: ");
         int vezesPartida = input.nextInt();
-        System.out.println(" ");
+        System.out.println("Você irá jogar " + vezesPartida + " partidas.");
+        return vezesPartida;
+    }
 
-        int rodada = 1;
-        System.out.println("***** Vamos começar a rodada nª " + rodada + " *****");
-
+    public static int jogarPartidas (int vezesPartida, Scanner input) {
         int pontuacaoTotal = 0;
         ArrayList<Integer> listaAcertos = new ArrayList<>();
         ArrayList<Integer> listaQuaseLa = new ArrayList<>();
@@ -51,10 +74,11 @@ public class Main {
 
         System.out.println(" ");
         System.out.println("******************************************************************");
-        System.out.println("Sua pontuação na rodada nª " + rodada + " é de " + pontuacaoTotal + " pontos.");
         System.out.println("Os números que você acertou foram: " + listaAcertos);
         System.out.println("Os números que você quase acertou por 1 de distância foram: " + listaQuaseLa);
         System.out.println("Os números que você errou foram: " + listaErros);
         System.out.println("******************************************************************");
+
+        return pontuacaoTotal;
     }
 }
